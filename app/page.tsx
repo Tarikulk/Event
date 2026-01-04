@@ -1,5 +1,6 @@
+import EventCard from '@/components/EventCard'
 import ExploreBTN from '@/components/ExploreBTN'
-import React from 'react'
+import events from '@/lib/constants' 
 
 const Home = () => {
   return (
@@ -12,8 +13,10 @@ const Home = () => {
      <h3>Featured Events</h3>
 
      <ul className='events'>
-      {[1,2,3,4,5].map((event) => (
-        <li key={event}>Event {event}</li>
+      {events.map((event) => (
+        <li key={event.title} className='list-none'> 
+        <EventCard {...event} />
+        </li>
       ))}
      </ul>
     </div>
